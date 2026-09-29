@@ -1,0 +1,36 @@
+# lazygit config. The path differs per OS, see lazygit/README.md.
+
+gui:
+  # High-contrast theme: light grey text with yellow highlights.
+  theme:
+    activeBorderColor:
+      - "#ffcc00"
+      - bold
+    inactiveBorderColor:
+      - "#bbbbbb"
+    selectedLineBgColor:
+      - "#1a1a1a"
+    optionsTextColor:
+      - "#ffcc00"
+  showFileTree: true
+  showCommandLog: true
+  mouseEvents: true
+  nerdFontsVersion: "3"
+git:
+  diffRenderers:
+    - colorArg: always
+      command: delta --dark --paging=never # falls back to lazygit's own diff view if delta is not installed
+  commit:
+    signOff: false
+  autoFetch: true
+# vi-style h/j/k/l navigation for tabs and list items.
+keybinding:
+  universal:
+    nextTab: "l"
+    prevTab: "h"
+    prevItem: "k"
+    nextItem: "j"
+  files:
+    commitChanges: "c"
+  commits:
+    viewResetOptions: "r"

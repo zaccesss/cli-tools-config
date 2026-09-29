@@ -1,0 +1,47 @@
+name: Config Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  config-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install ripgrep, fzf and lazygit
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ripgrep fzf zsh
+          LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+          curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+          tar xf /tmp/lazygit.tar.gz -C /tmp lazygit
+          sudo install /tmp/lazygit /usr/local/bin
+
+      - name: Real ripgrep smoke test
+        run: |
+          export RIPGREP_CONFIG_PATH="$PWD/ripgrep/ripgreprc"
+          echo "Hello World" > /tmp/rg-test.txt
+          rg "hello" /tmp/rg-test.txt
+
+      - name: Real fzf smoke test
+        run: |
+          cat > /tmp/fzf-smoke.zsh <<'SCRIPT'
+          source fzf/fzf.zsh
+          eval $FZF_DEFAULT_COMMAND | tee /tmp/fzf-files.txt
+          grep -q README.md /tmp/fzf-files.txt
+          fzf --filter=README < /tmp/fzf-files.txt | grep -q README.md
+          SCRIPT
+          zsh /tmp/fzf-smoke.zsh
+
+      - name: Real lazygit smoke test
+        run: |
+          mkdir -p ~/.config/lazygit
+          cp lazygit/config.yml ~/.config/lazygit/config.yml
+          lazygit --print-config-dir
