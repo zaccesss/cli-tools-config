@@ -29,5 +29,6 @@ install path and commands.
 
 | Path | Contents |
 | --- | --- |
+| [`ACCESSIBILITY.md`](ACCESSIBILITY.md) | High-contrast fzf colours and how the tools cut typing and memory load |
 | `<tool>/` | That tool's config file and a README on its install path |
 | [`guides/`](guides/) | Setup walkthrough and reference |
