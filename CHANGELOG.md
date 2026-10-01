@@ -14,3 +14,8 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Initial release: config for ripgrep, fzf and lazygit, plus a zoxide shell hook note
 - Setup and reference guides with per-platform install paths
 - CI smoke tests for each tool
+- `ACCESSIBILITY.md`: high-contrast fzf colours and how the tools cut typing and memory load.
+
+### Changed
+
+- Tidied code comments and the contributor guide.
