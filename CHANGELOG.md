@@ -9,6 +9,10 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for delta's dark theme on a light terminal and a link to the shared accessibility statement.
+
 ### Added
 
 - Initial release: config for ripgrep, fzf and lazygit, plus a zoxide shell hook note
