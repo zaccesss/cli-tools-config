@@ -1,6 +1,6 @@
 # fzf
 
-High-contrast colours (black background, light grey text), `rg`-backed file listing and the
+High-contrast colours as terminal colour names, so fzf follows the terminal's light or dark palette, `rg`-backed file listing and the
 key-bindings and completion scripts that ship with fzf's own package.
 
 ## Install

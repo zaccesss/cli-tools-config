@@ -11,6 +11,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- fzf, lazygit and lazygit's diffs through delta use terminal colour names instead of a fixed black background and hex colours, so they follow the terminal's light or dark palette. Selected lines are reversed rather than shaded.
 - `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for delta's dark theme on a light terminal and a link to the shared accessibility statement.
 
 ### Added

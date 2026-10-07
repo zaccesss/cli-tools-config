@@ -1,17 +1,18 @@
 # lazygit config. The path differs per OS, see lazygit/README.md.
 
 gui:
-  # High-contrast theme: light grey text with yellow highlights.
+  # terminal colour names rather than fixed hex values, so lazygit follows the terminal's light or
+  # dark palette; the selected line is reversed so it stands out in either mode
   theme:
     activeBorderColor:
-      - "#ffcc00"
+      - yellow
       - bold
     inactiveBorderColor:
-      - "#bbbbbb"
+      - default
     selectedLineBgColor:
-      - "#1a1a1a"
+      - reverse
     optionsTextColor:
-      - "#ffcc00"
+      - yellow
   showFileTree: true
   showCommandLog: true
   mouseEvents: true
@@ -19,7 +20,9 @@ gui:
 git:
   diffRenderers:
     - colorArg: always
-      command: delta --dark --paging=never # falls back to lazygit's own diff view if delta is not installed
+      # terminal colour names instead of a syntax theme, so diffs follow the terminal's light or dark
+      # palette; delta cannot safely ask the terminal which mode it is in while lazygit owns the screen
+      command: delta --paging=never --syntax-theme=none --zero-style=normal --plus-style=green --minus-style=red --plus-emph-style="bold reverse green" --minus-emph-style="bold reverse red"
   commit:
     signOff: false
   autoFetch: true
