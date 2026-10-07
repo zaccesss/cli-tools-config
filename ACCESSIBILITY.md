@@ -7,16 +7,16 @@ ripgrep, fzf, lazygit and zoxide make a keyboard-first command line with less to
 
 ## Vision
 
-| Element | Colours | Contrast |
-| --- | --- | --- |
-| fzf text | Light grey `#bbbbbb` on black | 10.9:1 |
-| fzf selected line | White on `#1a1a1a` | 17.4:1 |
-| fzf matches and pointer | Yellow `#ffcc00` on black | 13.9:1 |
+| Element | Colours |
+| --- | --- |
+| fzf text | The terminal's own text on its own background |
+| fzf selected line | Bold and reversed |
+| fzf matches and pointer | The terminal's yellow, bold |
+| lazygit borders and options | The terminal's yellow for the active panel, its own text for the rest |
+| lazygit selected line | Reversed |
+| Diffs in lazygit | The terminal's green for added lines and red for removed ones, with the exact change bold and reversed |
 
-Every pair is above the WCAG AAA level of 7:1. lazygit shows diffs through `delta` in dark mode with paging off, so a diff stays on one screen.
-
-> [!WARNING]
-> lazygit's diff pager runs `delta --dark`. On a light terminal change it to `--light` in `lazygit/config.yml`, otherwise the unchanged lines of a diff are drawn in light syntax colours on a light background. The fzf colours set their own black background, so they read the same on any terminal.
+Every colour is a terminal colour name rather than a fixed value, so fzf, lazygit and their diffs follow the terminal's palette in both light and dark mode. Their contrast is the terminal's own; the High Contrast palette in [terminal-config](https://github.com/zaccesss/terminal-config) keeps every colour at 7:1 or more in light mode. Selection is shown by reversing the line, never by colour alone. Diffs stay on one screen with paging off.
 
 ## Typing and memory
 

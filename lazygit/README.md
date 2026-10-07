@@ -1,6 +1,6 @@
 # lazygit
 
-A high-contrast theme, `delta` as the diff pager and h/j/k/l navigation for tabs and list items.
+A high-contrast theme in terminal colour names, `delta` as the diff pager and h/j/k/l navigation for tabs and list items.
 
 ## Install
 

@@ -3,16 +3,16 @@
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*'"
 
-# High-contrast colours: black background, light grey text, yellow highlights.
+# colours are terminal colour names (-1 is the terminal's own text and background), so fzf follows
+# the terminal's light or dark palette; the current line is bold and reversed in either mode
 export FZF_DEFAULT_OPTS="
   --height=60%
   --layout=reverse
   --border
-  --color=bg:#000000,bg+:#1a1a1a
-  --color=fg:#bbbbbb,fg+:#ffffff
-  --color=hl:#ffcc00,hl+:#ffcc00
-  --color=pointer:#ffcc00,marker:#ffcc00
-  --color=prompt:#bbbbbb,spinner:#bbbbbb,info:#888888
+  --color=bg:-1,bg+:-1,fg:-1,fg+:-1:bold:reverse
+  --color=hl:yellow:bold,hl+:yellow:bold
+  --color=pointer:yellow,marker:yellow
+  --color=prompt:-1,spinner:-1,info:-1
   --bind=ctrl-/:toggle-preview
 "
 
