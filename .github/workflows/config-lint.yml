@@ -12,13 +12,15 @@ permissions:
 jobs:
   config-lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
 
       - name: Install ripgrep, fzf and lazygit
+        timeout-minutes: 5
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ripgrep fzf zsh
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y ripgrep fzf zsh
           LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
           curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
           tar xf /tmp/lazygit.tar.gz -C /tmp lazygit
