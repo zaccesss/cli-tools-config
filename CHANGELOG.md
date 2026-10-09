@@ -9,6 +9,10 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Screenshots and short animations of the config in action, dark and light, in the README's In action section.
+
 ### Changed
 
 - fzf, lazygit and lazygit's diffs through delta use terminal colour names instead of a fixed black background and hex colours, so they follow the terminal's light or dark palette. Selected lines are reversed rather than shaded.

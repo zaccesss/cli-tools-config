@@ -3,6 +3,22 @@
 > Config for ripgrep, fzf, lazygit and zoxide: sensible defaults, a high-contrast theme and
 > vi-style navigation, with per-platform install paths.
 
+## In action
+
+Screenshots in the High Contrast palette, dark and light. Each one links to a short animation of the same scene.
+
+### lazygit
+
+| Dark | Light |
+| --- | --- |
+| [![Dark: lazygit showing a modified README with its diff and the commit list](docs/demo/lazygit-dark.webp)](docs/demo/lazygit-dark.gif) | [![Light: lazygit showing a modified README with its diff and the commit list](docs/demo/lazygit-light.webp)](docs/demo/lazygit-light.gif) |
+
+### fzf
+
+| Dark | Light |
+| --- | --- |
+| [![Dark: fzf filtering the repository's files for the word theme with the matches highlighted](docs/demo/fzf-dark.webp)](docs/demo/fzf-dark.gif) | [![Light: fzf filtering the repository's files for the word theme with the matches highlighted](docs/demo/fzf-light.webp)](docs/demo/fzf-light.gif) |
+
 ## What's here
 
 Each top-level folder is one tool, holding its config file and a README on where that config
