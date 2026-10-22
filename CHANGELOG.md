@@ -9,18 +9,12 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.1] - 2026-10-22
+
 ### Added
 
 - The screenshots and clips are recorded again in Zacess Deep Contrast Dark and Light, using the real config in a throwaway demo project.
 - Screenshots and short animations of the config in action, dark and light, in the README's In action section.
-
-### Changed
-
-- fzf, lazygit and lazygit's diffs through delta use terminal colour names instead of a fixed black background and hex colours, so they follow the terminal's light or dark palette. Selected lines are reversed rather than shaded.
-- `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for delta's dark theme on a light terminal and a link to the shared accessibility statement.
-
-### Added
-
 - Initial release: config for ripgrep, fzf and lazygit, plus a zoxide shell hook note
 - Setup and reference guides with per-platform install paths
 - CI smoke tests for each tool
@@ -28,4 +22,6 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- fzf, lazygit and lazygit's diffs through delta use terminal colour names instead of a fixed black background and hex colours, so they follow the terminal's light or dark palette. Selected lines are reversed rather than shaded.
+- `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for delta's dark theme on a light terminal and a link to the shared accessibility statement.
 - Tidied code comments and the contributor guide.
